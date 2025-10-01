@@ -1,103 +1,322 @@
-import Image from "next/image";
+import { useMemo } from "react";
+import { Linkedin, Mail, Rocket, Shield, Cpu, BookOpen, Layers, Flame, ChevronRight, Wrench } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 
-export default function Home() {
+// ---------------------------------------------
+// Quick data model
+// ---------------------------------------------
+const links = {
+  email: "jackryanrumpf@gmail.com",
+  linkedin: "https://www.linkedin.com/in/jackrumpf/",
+};
+
+const ventures = [
+  {
+    title: "AerLock",
+    subtitle: "Next‑gen cybersecurity startup",
+    badge: "Co‑Founder & Builder",
+    highlights: [
+      "AI that not only detects threats but patches them instantly",
+      "Custom Proxmox + Tailscale lab for live malware battles",
+      "Pushed into CREATE‑X Launch, building fast and loud",
+    ],
+    icon: Shield,
+  },
+  {
+    title: "GridEye",
+    subtitle: "Football analytics cracked with computer vision",
+    badge: "Co‑Founder",
+    highlights: [
+      "Maps all 22 players in real‑time, calls plays like a coach",
+      "Design‑partner outreach with NCAA teams",
+      "Took home gold at Hacklytics sports analytics",
+    ],
+    icon: Cpu,
+  },
+  {
+    title: "Deep Robotics",
+    subtitle: "Underwater welding & inspection ROV",
+    badge: "Co‑Founder (CREATE‑X)",
+    highlights: [
+      "Remote‑operated welding arms + holonomic thrusters",
+      "Taking on $2B subsea maintenance market",
+      "Pitching as the alternative to risky saturation dives",
+    ],
+    href: "https://create-x.gatech.edu/node/9702",
+    icon: Wrench,
+  },
+  {
+    title: "PipeX",
+    subtitle: "Robotics for pipe inspection & repair",
+    badge: "Co‑Founder",
+    highlights: [
+      "Vision‑driven detection of cracks + corrosion",
+      "Automates one of the sketchiest maintenance jobs",
+      "Won 1st place RoboTech 2025 (Advanced Track)",
+    ],
+    href: "https://robotech-2025.devpost.com/project-gallery",
+    icon: Layers,
+  },
+];
+
+const teamsAndProjects = [
+  {
+    title: "Propulsive Landers — Structures Sub‑Team Lead",
+    subtitle: "Building rockets that don’t just fly, they land",
+    bullets: [
+      "Leading 30+ engineers, grinding 40+ hrs/week on CAD/FEA/CFD",
+      "Validating aero + vibro sims in Ansys",
+      "FEA on engines, MATLAB for nozzle + grain design",
+    ],
+    icon: Flame,
+  },
+  {
+    title: "Pedro Pathing",
+    subtitle: "Reactive path planning that actually sticks",
+    bullets: [
+      "Maintainer; dropped PRs for cracked mecanum kinematics",
+      "Used by thousands worldwide (seriously)",
+      "pedropathing.com",
+    ],
+    icon: Layers,
+  },
+];
+
+const research = [
+  {
+    title: "Coaxial & Differential TVC Systems for Rockets",
+    venue: "AIAA (Lead Author)",
+    note: "+25% better control — FEA + MATLAB turned into wins",
+    href: "https://arc.aiaa.org/doi/10.2514/6.2025-99480",
+    icon: Rocket,
+  },
+  {
+    title: "Disc Baffle Optimization in Sloshing N2O Tanks",
+    venue: "AIAA (Co‑Author)",
+    note: "~34% drop in pressure spikes — CFD in Fluent",
+    href: "https://arc.aiaa.org/doi/10.2514/6.2025-99478",
+    icon: BookOpen,
+  },
+];
+
+const experience = [
+  {
+    role: "Mechanical, Structural & Process Eng. Intern",
+    org: "Savannah River Mission Completion (DOE)",
+    time: "May – Jul 2025",
+    bullets: [
+      "3D modeled a 2,000‑part radioactive beast of a system",
+      "Prototyped fixes overnight — kept the plant moving",
+      "Analyzed pumps, handed ops team fresh data viz for control",
+    ],
+  },
+  {
+    role: "Technical Consultant Intern",
+    org: "Spark Starter Studio",
+    time: "Apr 2024 – Apr 2025",
+    bullets: [
+      "Launched products with clients like Mondelez — shipped fast, no fluff",
+      "Ran IT security audits, exposed cracks, pushed upgrade roadmaps",
+      "Teamed with devs to spin up flashy web pages that actually convert",
+    ],
+  },
+  {
+    role: "ML Researcher & App Developer",
+    org: "Emory Global Health Institute",
+    time: "Apr – Jun 2023",
+    bullets: [
+      "Built a cracked music therapy app with ML + EEG integration",
+      "Drafted a paper tearing into brainwave‑driven therapy effectiveness",
+      "Designed a slick UI making therapy tools dead simple to use",
+    ],
+  },
+  {
+    role: "Design & Manufacturing Eng. Intern",
+    org: "ABB Motion — NEMA Motors",
+    time: "May – Jun 2023",
+    bullets: [
+      "Designed custom VFDs, built out full control panel",
+      "Cranked out automation to boost line speed ~5%",
+      "Repped the eng team to International Paper execs",
+    ],
+  },
+];
+
+export default function Portfolio() {
+  const initials = useMemo(() => "JR", []);
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen bg-white text-slate-900">
+      {/* NAV */}
+      <header className="sticky top-0 z-40 backdrop-blur bg-white/70 border-b border-slate-200">
+        <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="w-9 h-9 rounded-2xl bg-emerald-500 text-slate-900 flex items-center justify-center font-bold">
+              {initials}
+            </div>
+            <span className="font-semibold tracking-tight">Jack Rumpf</span>
+          </div>
+          <nav className="hidden md:flex items-center gap-4 text-sm">
+            {[
+              ["Ventures", "#ventures"],
+              ["Teams & Projects", "#teams"],
+              ["Research", "#research"],
+              ["Experience", "#experience"],
+            ].map(([label, href]) => (
+              <a key={href} href={href} className="hover:underline underline-offset-4">
+                {label}
+              </a>
+            ))}
+          </nav>
+          <div className="flex items-center gap-2">
+            <Button asChild className="bg-emerald-500 text-slate-900 hover:bg-emerald-400">
+              <a href={`mailto:${links.email}`}>
+                <Mail className="mr-2 h-4 w-4" /> Email
+              </a>
+            </Button>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </header>
+
+      {/* HERO */}
+      <section className="max-w-6xl mx-auto px-4 py-20 md:py-28">
+        <div className="max-w-3xl mx-auto text-center">
+          <div className="mb-3 inline-flex items-center gap-2 px-3 py-1 rounded-full border border-slate-200 bg-slate-50">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+            <span className="text-xs text-slate-600">Founder • Builder • Hacker</span>
+          </div>
+          <h1 className="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">
+            4× Founder. 3× Intern. 2× Published. Cracking the future wide open.
+          </h1>
+          <div className="mt-8 flex flex-wrap gap-3 justify-center">
+            <Button asChild className="bg-emerald-500 text-slate-900 hover:bg-emerald-400">
+              <a href="#ventures">
+                Explore my work <ChevronRight className="ml-2 h-4 w-4" />
+              </a>
+            </Button>
+            <Button asChild variant="outline">
+              <a href={links.linkedin} target="_blank" rel="noreferrer">
+                <Linkedin className="mr-2 h-4 w-4" /> LinkedIn
+              </a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* VENTURES */}
+      <Section id="ventures" title="Ventures">
+        <div className="grid md:grid-cols-2 gap-6">
+          {ventures.map((v) => (
+            <a key={v.title} href={v.href ?? "#"} target={v.href ? "_blank" : undefined} rel={v.href ? "noreferrer" : undefined}>
+              <Card className="hover:shadow-lg transition-shadow h-full">
+                <CardHeader className="space-y-2">
+                  <div className="flex items-center gap-2">
+                    <v.icon className="h-5 w-5" />
+                    <CardTitle className="text-lg">{v.title}</CardTitle>
+                  </div>
+                  <div className="text-slate-500 text-sm">{v.subtitle}</div>
+                  <Badge>{v.badge}</Badge>
+                </CardHeader>
+                <CardContent className="text-sm text-slate-600 space-y-2">
+                  {v.highlights.map((h, i) => (
+                    <li key={i} className="list-none">• {h}</li>
+                  ))}
+                </CardContent>
+              </Card>
+            </a>
+          ))}
+        </div>
+      </Section>
+
+      {/* TEAMS & PROJECTS */}
+      <Section id="teams" title="Teams & Projects">
+        <div className="grid md:grid-cols-2 gap-6">
+          {teamsAndProjects.map((p) => (
+            <a key={p.title} href={p.href ?? "#"} target={p.href ? "_blank" : undefined} rel={p.href ? "noreferrer" : undefined}>
+              <Card className="hover:shadow-lg transition-shadow h-full">
+                <CardHeader>
+                  <div className="flex items-center gap-2">
+                    <p.icon className="h-5 w-5" />
+                    <CardTitle className="text-lg">{p.title}</CardTitle>
+                  </div>
+                  <div className="text-slate-500 text-sm">{p.subtitle}</div>
+                </CardHeader>
+                <CardContent className="text-sm text-slate-600 space-y-2">
+                  {p.bullets.map((b, i) => (
+                    <li key={i} className="list-none">• {b}</li>
+                  ))}
+                </CardContent>
+              </Card>
+            </a>
+          ))}
+        </div>
+      </Section>
+
+      {/* RESEARCH */}
+      <Section id="research" title="Research">
+        <div className="grid md:grid-cols-2 gap-6">
+          {research.map((r) => (
+            <a key={r.title} href={r.href} target="_blank" rel="noreferrer">
+              <Card className="hover:shadow-lg transition-shadow h-full">
+                <CardHeader>
+                  <div className="flex items-center gap-2">
+                    <r.icon className="h-5 w-5" />
+                    <CardTitle className="text-lg">{r.title}</CardTitle>
+                  </div>
+                  <div className="text-slate-500 text-sm">{r.venue}</div>
+                </CardHeader>
+                <CardContent className="text-sm text-slate-600">{r.note}</CardContent>
+              </Card>
+            </a>
+          ))}
+        </div>
+      </Section>
+
+      {/* EXPERIENCE */}
+      <Section id="experience" title="Experience">
+        <div className="grid md:grid-cols-2 gap-6">
+          {experience.map((e) => (
+            <Card key={e.role} className="hover:shadow-lg transition-shadow h-full">
+              <CardHeader>
+                <CardTitle className="text-lg">{e.role}</CardTitle>
+                <div className="text-slate-500 text-sm">{e.org} • {e.time}</div>
+              </CardHeader>
+              <CardContent className="text-sm text-slate-600 space-y-2">
+                {e.bullets.map((b, i) => (
+                  <li key={i} className="list-none">• {b}</li>
+                ))}
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </Section>
+
+      {/* FOOTER (minimal) */}
+      <footer className="mt-16 border-t border-slate-200">
+        <div className="max-w-6xl mx-auto px-4 py-8 text-sm text-slate-500 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p>© {new Date().getFullYear()} Jack Rumpf.</p>
+          <div className="flex items-center gap-4">
+            <a className="hover:underline" href={links.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+            <a className="hover:underline" href={`mailto:${links.email}`}>Email</a>
+          </div>
+        </div>
       </footer>
     </div>
+  );
+}
+
+// ---------------------------------------------
+// Small presentational helpers
+// ---------------------------------------------
+function Section({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
+  return (
+    <section id={id} className="max-w-6xl mx-auto px-4 py-12 md:py-16">
+      <div className="mb-6 flex items-end justify-between">
+        <h2 className="text-2xl md:text-3xl font-bold tracking-tight">{title}</h2>
+      </div>
+      {children}
+    </section>
   );
 }
