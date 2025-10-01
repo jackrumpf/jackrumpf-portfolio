@@ -16,29 +16,31 @@ const ventures = [
   {
     title: "AerLock",
     subtitle: "Next‑gen cybersecurity startup",
-    badge: "Co‑Founder & Builder",
+    badge: "Co‑Founder",
     highlights: [
       "AI that not only detects threats but patches them instantly",
       "Custom Proxmox + Tailscale lab for live malware battles",
       "Pushed into CREATE‑X Launch, building fast and loud",
     ],
+    href: "https://aerlock.com",
     icon: Shield,
   },
   {
     title: "GridEye",
-    subtitle: "Football analytics cracked with computer vision",
+    subtitle: "Football analytics with computer vision",
     badge: "Co‑Founder",
     highlights: [
       "Maps all 22 players in real‑time, calls plays like a coach",
       "Design‑partner outreach with NCAA teams",
       "Took home gold at Hacklytics sports analytics",
     ],
+    href: "https://devpost.com/software/grideye",
     icon: Cpu,
   },
   {
     title: "Deep Robotics",
     subtitle: "Underwater welding & inspection ROV",
-    badge: "Co‑Founder (CREATE‑X)",
+    badge: "Co‑Founder",
     highlights: [
       "Remote‑operated welding arms + holonomic thrusters",
       "Taking on $2B subsea maintenance market",
@@ -56,7 +58,7 @@ const ventures = [
       "Automates one of the sketchiest maintenance jobs",
       "Won 1st place RoboTech 2025 (Advanced Track)",
     ],
-    href: "https://robotech-2025.devpost.com/project-gallery",
+    href: "https://devpost.com/software/pipex",
     icon: Layers,
   },
 ];
@@ -70,16 +72,18 @@ const teamsAndProjects = [
       "Validating aero + vibro sims in Ansys",
       "FEA on engines, MATLAB for nozzle + grain design",
     ],
+    href: "https://gtpropulsivelanders.org",
     icon: Flame,
   },
   {
     title: "Pedro Pathing",
     subtitle: "Reactive path planning that actually sticks",
     bullets: [
-      "Maintainer; dropped PRs for cracked mecanum kinematics",
-      "Used by thousands worldwide (seriously)",
+      "Maintainer; dropped PRs for mecanum kinematics",
+      "Used by thousands worldwide",
       "pedropathing.com",
     ],
+    href: "https://pedropathing.com",
     icon: Layers,
   },
 ];
@@ -88,7 +92,7 @@ const research = [
   {
     title: "Coaxial & Differential TVC Systems for Rockets",
     venue: "AIAA (Lead Author)",
-    note: "+25% better control — FEA + MATLAB turned into wins",
+    note: "+25% better control — FEA + MATLAB turned into control",
     href: "https://arc.aiaa.org/doi/10.2514/6.2025-99480",
     icon: Rocket,
   },
@@ -107,7 +111,7 @@ const experience = [
     org: "Savannah River Mission Completion (DOE)",
     time: "May – Jul 2025",
     bullets: [
-      "3D modeled a 2,000‑part radioactive beast of a system",
+      "3D modeled a 2,000‑part radioactive system",
       "Prototyped fixes overnight — kept the plant moving",
       "Analyzed pumps, handed ops team fresh data viz for control",
     ],
@@ -119,7 +123,7 @@ const experience = [
     bullets: [
       "Launched products with clients like Mondelez — shipped fast, no fluff",
       "Ran IT security audits, exposed cracks, pushed upgrade roadmaps",
-      "Teamed with devs to spin up flashy web pages that actually convert",
+      "Teamed with devs to spin up web pages that actually convert",
     ],
   },
   {
@@ -127,9 +131,9 @@ const experience = [
     org: "Emory Global Health Institute",
     time: "Apr – Jun 2023",
     bullets: [
-      "Built a cracked music therapy app with ML + EEG integration",
-      "Drafted a paper tearing into brainwave‑driven therapy effectiveness",
-      "Designed a slick UI making therapy tools dead simple to use",
+      "Built a music therapy app with ML + EEG integration",
+      "Drafted a paper on brainwave‑driven therapy effectiveness",
+      "Designed a slick UI making therapy tools simple to use",
     ],
   },
   {
