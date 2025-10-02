@@ -157,9 +157,6 @@ export default function Portfolio() {
       <header className="sticky top-0 z-40 backdrop-blur bg-white/70 border-b border-slate-200">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-2xl bg-emerald-500 text-slate-900 flex items-center justify-center font-bold">
-              {initials}
-            </div>
             <span className="font-semibold tracking-tight">Jack Rumpf</span>
           </div>
           <nav className="hidden md:flex items-center gap-4 text-sm">
@@ -189,10 +186,10 @@ export default function Portfolio() {
         <div className="max-w-3xl mx-auto text-center">
           <div className="mb-3 inline-flex items-center gap-2 px-3 py-1 rounded-full border border-slate-200 bg-slate-50">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
-            <span className="text-xs text-slate-600">Founder • Builder • Hacker</span>
+            <span className="text-xs text-slate-600">Founder • Builder • Designer</span>
           </div>
           <h1 className="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">
-            4× Founder. 3× Intern. 2× Published. Cracking the future wide open.
+            4× Founder. 4× Intern. 2× Published.
           </h1>
           <div className="mt-8 flex flex-wrap gap-3 justify-center">
             <Button asChild className="bg-emerald-500 text-slate-900 hover:bg-emerald-400">
