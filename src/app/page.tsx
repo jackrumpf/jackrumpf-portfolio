@@ -20,7 +20,7 @@ const ventures = [
     highlights: [
       "AI that not only detects threats but patches them instantly",
       "Custom Proxmox + Tailscale lab for live malware battles",
-      "Pushed into CREATE‑X Launch, building fast and loud",
+      "Funded by Fusen, building fast and loud",
     ],
     href: "https://aerlock.com",
     icon: Shield,
